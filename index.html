@@ -15,6 +15,7 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:400,300,300italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Cookie&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Patua+One&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
@@ -202,12 +203,34 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 				<div class="wsite-section-elements">
 					<h2 class="wsite-content-title">Uma nova op&ccedil;&atilde;o<br />para o mercado<br />de jogos</h2>
 
-<div class="paragraph"><font size="4" color="#d5d5d5">A GameCenter &eacute; uma loja de jogos que possibilita a<br />fun&ccedil;&atilde;o de aluguel para os clientes, gerando mais possibilidades de escolha</font></div>
+<div class="paragraph"><font size="4" color="#d5d5d5">
+	<div data-bind="if: isLoged">
+		<p>Você já está logado!</p>
+		<a class="wsite-button wsite-button-large wsite-button-normal" href="minha-conta.html" >
+			<span id="botao" class="wsite-button-inner">Acessar conta</span>
+		</a>
+		<a class="wsite-button wsite-button-large wsite-button-normal" href="minha-conta.html" >
+			<span data-bind="click: deslogar" id="botao" class="wsite-button-inner">Sair da conta</span>
+		</a>
+	</div>
+	<div data-bind="ifnot: isLoged">
+		<form>
+			<input id="email" style="height:50px; width:50%; border-radius: 5px; font-size: 24px;" type="text" placeholder="Insira o email"><br /><br />
+			<input id="pass" style="height:50px; width:50%; border-radius: 5px; font-size: 24px;" type="password" placeholder="Insira a senha"><br/><br/>
+			<button data-bind="click: logar" id="botao_log" style="height: 50px; width: 100px; border-radius: 20px;">Entrar</button>
+		</form>	<br/>
+		<div id="invalid_login" style="border-radius: 10px; display: none;" class="alert alert-danger" role="alert">
+			Credenciais inválidas!
+		  </div>
+		<p>Não tem uma conta? Registre-se!</p>
+	</div>
+
+</font>
+</div>
+
 
 <div style="text-align:inherit;"><div style="height: 10px; overflow: hidden;"></div>
-<a class="wsite-button wsite-button-small wsite-button-highlight" href="produtos.html" >
-<span class="wsite-button-inner">Entrar</span>
-</a>
+
 <div style="height: 10px; overflow: hidden;"></div></div>
 				</div>
 			</div>
@@ -305,6 +328,9 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
   <script type="text/javascript" src="files/theme/mobile.js"></script>
   <script type="text/javascript" src="files/theme/plugins.js"></script>
   <script type="text/javascript" src="files/theme/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+  <script type="text/javascript" src="files/theme/files/knock.js"></script>
+  <script src="files/theme/files/amplify.min.js"></script>
 
     <div id="customer-accounts-app"></div>
     <script src="http://cdn2.editmysite.com/js/site/main-customer-accounts-site.js?buildTime=1234"></script>
