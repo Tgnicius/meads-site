@@ -213,21 +213,12 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 					
 						
 
-<div data-bind="if: cliente"><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:inherit">
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:inherit">
 <a>
-<img  src="uploads/1/3/2/2/132271351/foto-do-jogo_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
+<img src="uploads/1/3/2/2/132271351/foto-do-jogo_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
 </a>
-
 <div style="display:block;font-size:90%"></div>
 </div></div>
-<div data-bind="ifnot: cliente"><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:inherit">
-  <a>
-  <img  src="uploads/1/3/2/2/132271351/empresa-logo.png" alt="Picture" style="width:auto;max-width:100%" />
-  </a>
-  
-  <div style="display:block;font-size:90%"></div>
-  </div></div>
-
 
 
 					
@@ -235,27 +226,18 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 					
 						
 
-<div data-bind="if: cliente" class="paragraph" style="text-align:left;"><font size="5">Usu&aacute;rio: NoobMaster69<br />Jogos comprados: 4<br />Jogos alugados: 13<br />N&uacute;mero de amigos: 95<br />Avalia&ccedil;&otilde;es feitas: 2<br />&#8203;Pontos de avalia&ccedil;&atilde;o: 130</font>
-</div>
-<div data-bind="ifnot: cliente" class="paragraph" style="text-align:left;"><font size="5">Nome: My Company<br />Número de produtos: 4<br />Avaliação média: 3.7</font>
-</div>
+<div class="paragraph" style="text-align:left;"><font size="5">Usu&aacute;rio: NoobMaster69<br />Jogos comprados: 4<br />Jogos alugados: 13<br />N&uacute;mero de amigos: 95<br />Avalia&ccedil;&otilde;es feitas: 2<br />&#8203;Pontos de avalia&ccedil;&atilde;o: 130</font></div>
+<p data-bind="text: teste.length"></p>
 
 <div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
 <hr class="styled-hr" style="width:100%;"></hr>
 <div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
 
-<div data-bind="if: cliente" style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
+<div style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
 <a class="wsite-button wsite-button-large wsite-button-normal" href="javascript:;" >
 <span id="botao" class="wsite-button-inner">Mudar dados da conta</span>
 </a>
 <div style="height: 10px; overflow: hidden;"></div></div>
-
-<div data-bind="ifnot: cliente" style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="javascript:;" >
-<span id="botao" class="wsite-button-inner">Adicionar produto</span>
-</a>
-<div style="height: 10px; overflow: hidden;"></div></div>
-
 
 
 					
@@ -285,15 +267,14 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 			</div>
 		</div><!--/.header-wrap-->
 
-		<div data-bind="if: cliente" id="main-wrap">
+		<div id="main-wrap">
 			<div id="wsite-content" class="wsite-elements wsite-not-footer">
 	<div class="wsite-section-wrap">
 	<div class="wsite-section wsite-body-section wsite-background-12 wsite-custom-background"  >
 		<div class="wsite-section-content">
 				<div class="container">
 			<div class="wsite-section-elements">
-        <h2 class="wsite-content-title" style="text-align:center;">Amigos</h2>
-        
+				<h2 class="wsite-content-title" style="text-align:center;">Amigos</h2>
 
 <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
 	<table class="wsite-multicol-table">
@@ -1700,8 +1681,7 @@ if (document.documentElement.appReady || (window.inEditor && window.inEditor()))
 
 		</div>
 
-    <div class="sticky-footer-push"></div>  
-
+		<div class="sticky-footer-push"></div>
 
 	</div><!--/.wrapper-->
 	<div id="footer-wrap"><div class="container">Create a <a target="_top" href="http://www.weebly.com/">free web site</a> with <a target="_top" href="http://www.weebly.com/" title="website grátis">Weebly</a><span class="cc_links" style="display:block;margin:1em 0 0;padding:0 0 1em;font-size:.8em">
@@ -1764,6 +1744,7 @@ Foto usada com Creative Commons de <a href="http://www.flickr.com/photos/1548846
   <script type="text/javascript" src="files/theme/files/custom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
   <script type="text/javascript" src="files/theme/files/knock.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/amplifyjs/1.1.2/amplify.min.js"></script>
 
     <div id="customer-accounts-app"></div>
     <script src="http://cdn2.editmysite.com/js/site/main-customer-accounts-site.js?buildTime=1234"></script>
