@@ -1,13 +1,12 @@
 function vm() {
+    // Login -----------------
     try {
         this.isLoged = ko.observable(JSON.parse(localStorage.getItem("logado")));
-        console.log(this.isLoged);
     }
     catch (err){
         this.isLoged = ko.observable(false);
     }
     this.cliente = ko.observable(JSON.parse(localStorage.getItem("cliente")));
-    console.log(this.conta);
  
     logar = function() {
         localStorage.setItem("contas", JSON.stringify([{name: "noobmaster69", email: "cliente@email.com", pass:"cliente"}, {name: "Ubisoft", email: "empresa@email.com", pass:"empresa"}]));
@@ -37,6 +36,26 @@ function vm() {
         localStorage.setItem("logado", JSON.stringify(false));
         this.isLoged(false);
     }
+
+    // Empresa add jogos ----------------------
+
+    this.game = ko.observable();
+    this.merch = ko.observable();
+
+    showGame = function() {
+        this.game(true);
+        this.merch(false);
+        return true // O radio vai ficar checked
+    }
+
+    showMerch = function() {
+        this.merch(true);
+        this.game(false);
+        return true // O radio vai ficar checked
+    }
+
+
+
     
 }
 
