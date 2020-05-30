@@ -271,23 +271,24 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
       </div>
       <div class="modal-body">
         <form>
-          <input data-bind="event: { keyup: verifyForm}" style="width: 40%;" type="text" placeholder="Name" id="prodName"/> <input placeholder="Price (€, separated with point)" style="width: 50%;" type="text" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)' id="prodPrice"/>
+          <input data-bind="event: {keyup: verifyForm}" style="width: 40%;" type="text" placeholder="Name" id="prodName"/> 
+          <input data-bind="event: {keyup: verifyForm}" placeholder="Price (€, separated with point)" style="width: 50%;" type="text" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)' id="prodPrice"/>
       
-          <textarea style="margin-top: 10px;" id="prodDesc" rows="2" cols="51" placeholder="Description"></textarea>
-          <input style="width: 50%; margin-top: 9px;" id="prodType" placeholder="Gênero"> 
+          <textarea data-bind="event: {keyup: verifyForm}" style="margin-top: 10px;" id="prodDesc" rows="2" cols="51" placeholder="Description"></textarea>
+          <input data-bind="event: {keyup: verifyForm}" style="width: 50%; margin-top: 9px;" id="prodType" placeholder="Gênero"> 
           <input data-bind="click: showGame" type="radio" name="type" id="game"> <label for="game"> Game </label> <input data-bind="click: showMerch" name="type" type="radio" id="merch"> <label for="merch"> Merchandising </label>
 
           <!-- Game -->
 
           <div data-bind="if: game">
-            <input id="gameAge" type="text" style="margin-top: 10px;" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Age Range">
+            <input data-bind="event: {keyup: verifyForm}" id="gameAge" type="text" style="margin-top: 10px;" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Age Range">
           </div>
 
           <!-- Product -->
           <div data-bind="if: merch">
-            <input id="mHeight" style="margin-top: 10px; width: 30%;" placeholder="Height"> 
-            <input id="mWidth" style="width: 30%;" placeholder="Width">
-            <input id="mLength" style="width: 30%;" placeholder="Length">
+            <input data-bind="event: {keyup: verifyForm}" id="mHeight" style="margin-top: 10px; width: 30%;" placeholder="Height"> 
+            <input data-bind="event: {keyup: verifyForm}" id="mWidth" style="width: 30%;" placeholder="Width">
+            <input data-bind="event: {keyup: verifyForm}" id="mLength" style="width: 30%;" placeholder="Length">
             Image: <input style="margin-top: 10px;" type="file">
           </div>
 
