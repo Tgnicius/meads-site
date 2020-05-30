@@ -39,8 +39,9 @@ function vm() {
 
     // Empresa add jogos ----------------------
 
-    this.game = ko.observable();
-    this.merch = ko.observable();
+    this.game = ko.observable(false);
+    this.merch = ko.observable(false);
+    this.verForm = ko.observable(false);
 
     showGame = function() {
         this.game(true);
@@ -51,7 +52,34 @@ function vm() {
     showMerch = function() {
         this.merch(true);
         this.game(false);
+        var jogo = this.game.request;
+        console.log(jogo);
         return true // O radio vai ficar checked
+    }
+
+    verifyForm = function() {
+        console.log("merch checked: "+$("#merch").is(":checked"));
+        console.log("game checked: "+$("#game").is(":checked"));
+        var isValid = true;
+        if ($.trim($("#prodName").val()).length < 2 || $.trim($("#prodPrice").val()).length < 1 || 
+        $.trim($("#prodDesc").val()).length < 2 || $.trim($("#prodType").val()).length < 2){
+            isValid = false;
+        }
+        else {
+            if ($("#game").is(":checked") && $.trim($("#gameAge").val()).length < 1) { 
+                console.log("game false");
+                console.log(this.game);
+                isValid = false;
+            }
+
+            if ($("#merch").is(":checked") && ($.trim($("#mHeight").val()).length < 1 || $.trim($("#mWidth").val()).length < 1 || 
+            $.trim($("#mLength").val()).length < 1)) {
+                console.log("merch false");
+                isValid = false;
+            } 
+        }
+
+        this.verForm(isValid);
     }
 
 

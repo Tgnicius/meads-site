@@ -271,7 +271,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
       </div>
       <div class="modal-body">
         <form>
-          <input style="width: 40%;" type="text" placeholder="Name" id="prodName"/> <input placeholder="Price (€, separated with point)" style="width: 50%;" type="text" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)' id="prodPrice"/>
+          <input data-bind="event: { keyup: verifyForm}" style="width: 40%;" type="text" placeholder="Name" id="prodName"/> <input placeholder="Price (€, separated with point)" style="width: 50%;" type="text" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)' id="prodPrice"/>
       
           <textarea style="margin-top: 10px;" id="prodDesc" rows="2" cols="51" placeholder="Description"></textarea>
           <input style="width: 50%; margin-top: 9px;" id="prodType" placeholder="Gênero"> 
@@ -280,14 +280,18 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
           <!-- Game -->
 
           <div data-bind="if: game">
-            <input type="text" style="margin-top: 10px;" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Age Range">
+            <input id="gameAge" type="text" style="margin-top: 10px;" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Age Range">
           </div>
 
           <!-- Product -->
           <div data-bind="if: merch">
-            <input style="margin-top: 10px;" placeholder="teste2">
-            <input type="file">
+            <input id="mHeight" style="margin-top: 10px; width: 30%;" placeholder="Height"> 
+            <input id="mWidth" style="width: 30%;" placeholder="Width">
+            <input id="mLength" style="width: 30%;" placeholder="Length">
+            Image: <input style="margin-top: 10px;" type="file">
           </div>
+
+          <button style="margin-top: 10px; height: 30px; width: 70px; border-radius: 5px;" data-bind="enable: verForm">Enviar</button>
 
         </form>
       </div>
