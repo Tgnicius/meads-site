@@ -178,7 +178,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 									</a>
 									
 								</li>
-								<li id="pg711022073975566915" class="wsite-menu-item-wrap">
+								<li data-bind="if: isLoged" id="pg711022073975566915" class="wsite-menu-item-wrap">
 									<a
 												href="minha-conta.html"
 										class="wsite-menu-item"
@@ -222,7 +222,6 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 		<div id="invalid_login" style="border-radius: 10px; display: none;" class="alert alert-danger" role="alert">
 			Credenciais inválidas!
 		  </div>
-		<p>Não tem uma conta? Registre-se!</p>
 	</div>
 
 </font>
@@ -330,7 +329,6 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
   <script type="text/javascript" src="files/theme/custom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
   <script type="text/javascript" src="files/theme/files/knock.js"></script>
-  <script src="files/theme/files/amplify.min.js"></script>
 
     <div id="customer-accounts-app"></div>
     <script src="http://cdn2.editmysite.com/js/site/main-customer-accounts-site.js?buildTime=1234"></script>
