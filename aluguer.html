@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
-		<title>Compra - GAME CENTER</title>
+		<title>Aluguer - GAME CENTER</title>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -449,32 +449,32 @@ if (document.documentElement.appReady || (window.inEditor && window.inEditor()))
   <script type="text/javascript" src="files/theme/mobile.js"></script>
   <script type="text/javascript" src="files/theme/plugins.js"></script>
   <script type="text/javascript" src="files/theme/custom.js"></script>
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR" data-sdk-integration-source="button-factory"></script>
-  <script>
-	paypal.Buttons({
-		style: {
-			shape: 'pill',
-			color: 'silver',
-			layout: 'vertical',
-			label: 'buynow',
-			
-		},
-		createOrder: function(data, actions) {
-			return actions.order.create({
-				purchase_units: [{
-					amount: {
-						value: '18'
-					}
-				}]
-			});
-		},
-		onApprove: function(data, actions) {
-			return actions.order.capture().then(function(details) {
-				alert('Transaction completed by ' + details.payer.name.given_name + '!');
-			});
-		}
-	}).render('#paypal-button-container');
-  </script>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'silver',
+          layout: 'vertical',
+          label: 'pay',
+          
+      },
+      createOrder: function(data, actions) {
+          return actions.order.create({
+              purchase_units: [{
+                  amount: {
+                      value: '4'
+                  }
+              }]
+          });
+      },
+      onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+              alert('Transaction completed by ' + details.payer.name.given_name + '!');
+          });
+      }
+  }).render('#paypal-button-container');
+</script>
 
     <div id="customer-accounts-app"></div>
     <script src="http://cdn2.editmysite.com/js/site/main-customer-accounts-site.js?buildTime=1234"></script>
