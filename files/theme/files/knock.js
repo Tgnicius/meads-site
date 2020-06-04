@@ -7,6 +7,9 @@ function vm() {
         this.isLoged = ko.observable(false);
     }
     this.cliente = ko.observable(JSON.parse(localStorage.getItem("cliente")));
+
+    this.jogos = ko.observable(JSON.parse(localStorage.getItem("jogos")));
+    this.produtos = ko.observable(JSON.parse(localStorage.getItem("produtos")));
  
     logar = function() {
         localStorage.setItem("contas", JSON.stringify([{name: "noobmaster69", email: "cliente@email.com", pass:"cliente"}, {name: "Ubisoft", email: "empresa@email.com", pass:"empresa"}]));
@@ -52,34 +55,67 @@ function vm() {
     showMerch = function() {
         this.merch(true);
         this.game(false);
-        var jogo = this.game.request;
-        console.log(jogo);
         return true // O radio vai ficar checked
     }
 
     verifyForm = function() {
-        console.log("merch checked: "+$("#merch").is(":checked"));
-        console.log("game checked: "+$("#game").is(":checked"));
         var isValid = true;
         if ($.trim($("#prodName").val()).length < 2 || $.trim($("#prodPrice").val()).length < 1 || 
         $.trim($("#prodDesc").val()).length < 2 || $.trim($("#prodType").val()).length < 2){
             isValid = false;
         }
         else {
+            if (!$("#game").is(":checked") && !$("#merch").is(":checked")){
+                isValid = false; // Tem q ter pelo menos um dos radios marcados
+            }
+
             if ($("#game").is(":checked") && $.trim($("#gameAge").val()).length < 1) { 
-                console.log("game false");
-                console.log(this.game);
                 isValid = false;
             }
 
             if ($("#merch").is(":checked") && ($.trim($("#mHeight").val()).length < 1 || $.trim($("#mWidth").val()).length < 1 || 
             $.trim($("#mLength").val()).length < 1)) {
-                console.log("merch false");
                 isValid = false;
             } 
         }
 
         this.verForm(isValid);
+
+    }
+
+    submitForm = function() {
+        var name = $("#prodName").val();
+        var price = $("#prodPrice").val();
+        var desc = $("#prodDesc").val();
+        var tipo = $("#prodType").val();
+
+        if ($("#game").is(":checked")){
+            var age = $("#gameAge").val();
+            var jogos = new Array();
+            console.log(localStorage.getItem("jogos"));
+            jogos = JSON.parse(localStorage.getItem("jogos")) || []; // dados dos jogos
+            var jogo = {nome: name, preco: price, description: desc, genero: tipo, idade: age};
+            jogos.push(jogo); // adc o jogo para a lista
+            localStorage.setItem("jogos", JSON.stringify(jogos)); // salvar a lista no storage
+            console.log(jogos[0].nome);
+        }
+
+        if ($("#merch").is(":checked")){
+
+            var height = $("#mHeight").val();
+            var width = $("#mWidth").val();
+            var leng = $("#mLength").val();
+            var produtos = new Array();
+            if (localStorage.getItem("produtos") != "undefined")
+                produtos = JSON.parse(localStorage.getItem("produtos")) || []; // dados dos jogos
+            var produto = {nome: name, preco: price, description: desc, genero: tipo, altura: height, largura: width, comprimento: leng};
+            produtos.push(produto); // adc o jogo para a lista
+            localStorage.setItem("produtos", JSON.stringify(produtos)); // salvar a lista no storage
+
+        }
+
+        
+
     }
 
 
