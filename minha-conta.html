@@ -239,7 +239,10 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 
 <div data-bind="if: cliente" class="paragraph" style="text-align:left;"><font size="5">Usu&aacute;rio: NoobMaster69<br />Jogos comprados: 4<br />Jogos alugados: 13<br />N&uacute;mero de amigos: 95<br />Avalia&ccedil;&otilde;es feitas: 2<br />&#8203;Pontos de avalia&ccedil;&atilde;o: 130</font>
 </div>
-<div data-bind="ifnot: cliente" class="paragraph" style="text-align:left;"><font size="5">Nome: My Company<br />Número de produtos: 4<br />Avaliação média: 3.7</font>
+<div data-bind="ifnot: cliente" class="paragraph" style="text-align:left;"><font size="5">Nome: My Company<br />
+  Número de merchandising: <a id="nProd" data-bind="text: numProdutos"></a><br />
+  Número de jogos: <a id="nJog" data-bind="text: numJogos"></a>
+  <br />Avaliação média: 3.7</font>
 </div>
 
 <div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
@@ -289,10 +292,10 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
             <input data-bind="event: {keyup: verifyForm}" id="mHeight" style="margin-top: 10px; width: 30%;" placeholder="Height"> 
             <input data-bind="event: {keyup: verifyForm}" id="mWidth" style="width: 30%;" placeholder="Width">
             <input data-bind="event: {keyup: verifyForm}" id="mLength" style="width: 30%;" placeholder="Length">
-            Image: <input style="margin-top: 10px;" type="file">
+            Image: <input style="margin-top: 10px;" id="imagem" type="file" accept="image/*">
           </div>
 
-          <button style="margin-top: 10px; height: 30px; width: 70px; border-radius: 5px;" data-bind="enable: verForm, click: submitForm">Enviar</button>
+          <button data-dismiss="modal" style="margin-top: 10px; height: 30px; width: 70px; border-radius: 5px;" data-bind="enable: verForm, click: submitForm">Enviar</button>
 
         </form>
       </div>

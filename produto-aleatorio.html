@@ -214,26 +214,25 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 <div style="display:block;font-size:90%"></div>
 </div></div>
 
-
+<!-- knockout ------------------------->
 					
-				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+				</td>				<td data-bind="with: produto" class="wsite-multicol-col" style="width:50%; padding:0 15px;">
 					
 						
 
-<div class="paragraph"><font size="7">Produto Aleatório</font><br /><br /><font size="5"></font><span style="color:rgb(77, 81, 86)"><font size="5">Preço: 18.00&euro;<br />Avaliações: 3.7/5.0<br />Tamanho: 45x75x90<br /><br />Empresa: Ubisoft</font><br /><br /><font size="2">Descrição completa do produto falando sobre ele e principalmente as características</font></span><br /><br /><br /></div>
+<div class="paragraph"><font data-bind="text: nome" size="7"></font><br />
+	<br /><font size="5"></font><span style="color:rgb(77, 81, 86)"><font size="5">
+		Preço: <a data-bind="text: preco"></a>&euro;
+		
+		<br />Avaliações: 3.7/5.0<br />Tamanho: <a data-bind="text: altura"></a>x<a data-bind="text: comprimento"></a>x<a data-bind="text: largura"></a><br />
+		<br />Empresa: Ubisoft</font><br /><br />
+		<font data-bind="text: description" size="2"></font></span><br /><br /><br /></div>
 
 <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
 	<table class="wsite-multicol-table">
 		<tbody class="wsite-multicol-tbody">
 			<tr class="wsite-multicol-tr">
 				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
-					
-
-					
-
-
-					
-						
 					
 <div style="text-align:center;"><div style="height: 10px; overflow: hidden;"></div>
 <a class="wsite-button wsite-button-large wsite-button-highlight" href="compra.html" >
@@ -482,7 +481,12 @@ if (document.documentElement.appReady || (window.inEditor && window.inEditor()))
   <script type="text/javascript" src="files/theme/mobile.js"></script>
   <script type="text/javascript" src="files/theme/plugins.js"></script>
   <script type="text/javascript" src="files/theme/custom.js"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+  <script type="text/javascript" src="files/theme/files/knock.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 
     <div id="customer-accounts-app"></div>
     <script src="http://cdn2.editmysite.com/js/site/main-customer-accounts-site.js?buildTime=1234"></script>
