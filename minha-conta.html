@@ -259,6 +259,9 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 <a class="wsite-button wsite-button-large wsite-button-normal" href="javascript:;" >
 <span id="botao" data-toggle="modal" data-target="#adcProd" class="wsite-button-inner">Adicionar produto</span>
 </a>
+<a class="wsite-button wsite-button-large wsite-button-normal" href="javascript:;" >
+<span id="botao" data-toggle="modal" data-target="#remProd" class="wsite-button-inner">Remover produto</span>
+</a>
 <br/>
 <br/>
 <br/>
@@ -289,10 +292,10 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 
           <!-- Product -->
           <div data-bind="if: merch">
-            <input data-bind="event: {keyup: verifyForm}" id="mHeight" style="margin-top: 10px; width: 30%;" placeholder="Height"> 
-            <input data-bind="event: {keyup: verifyForm}" id="mWidth" style="width: 30%;" placeholder="Width">
-            <input data-bind="event: {keyup: verifyForm}" id="mLength" style="width: 30%;" placeholder="Length">
-            Image: <input style="margin-top: 10px;" id="imagem" type="file" accept="image/*">
+            <input data-bind="event: {keyup: verifyForm}" id="mHeight" style="margin-top: 10px; width: 30%;" placeholder="Height" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)'> 
+            <input data-bind="event: {keyup: verifyForm}" id="mWidth" style="width: 30%;" placeholder="Width" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)'>
+            <input data-bind="event: {keyup: verifyForm}" id="mLength" style="width: 30%;" placeholder="Length" onkeypress='return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)'>
+            <!-- Image: <input style="margin-top: 10px;" id="imagem" type="file" accept="image/*"> -->
           </div>
 
           <button data-dismiss="modal" style="margin-top: 10px; height: 30px; width: 70px; border-radius: 5px;" data-bind="enable: verForm, click: submitForm">Enviar</button>
@@ -307,6 +310,34 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
   </div>
 <div style="height: 10px; overflow: hidden;"></div></div>
 
+<!-- Remover Produto -->
+
+<div id="remProd" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content ----------------------->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Remover produto</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <input data-bind="event: {keyup: verifyForm2}" style="width: 40%;" type="text" placeholder="Name" id="prodName2"/> 
+    
+          <input data-bind="click: showGame" type="radio" name="type" id="game2"> <label for="game2"> Game </label> <input data-bind="click: showMerch" name="type" type="radio" id="merch2"> <label for="merch2"> Merchandising </label>
+          <br/>
+          <button data-dismiss="modal" style="margin-top: 10px; height: 30px; width: 80px; border-radius: 5px;" data-bind="enable: verForm2, click: submitForm2">Remover</button>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>  
+
+  </div>
+<div style="height: 10px; overflow: hidden;"></div></div>
 
 
 					

@@ -53,6 +53,7 @@ function vm() {
     this.game = ko.observable(false);
     this.merch = ko.observable(false);
     this.verForm = ko.observable(false);
+    this.verForm2 = ko.observable(false);
 
     showGame = function() {
         this.game(true);
@@ -89,6 +90,14 @@ function vm() {
 
         this.verForm(isValid);
 
+    }
+
+    verifyForm2 = function() {
+        var isValid = true;
+        if ($.trim($("#prodName2").val()).length < 2 || (!$("#game2").is(":checked") && !$("#merch2").is(":checked")))
+            isValid = false;
+        
+        this.verForm2(isValid);
     }
 
     submitForm = function() {
@@ -145,6 +154,73 @@ function vm() {
     }
 
     // Empresa remove produtos
+
+    submitForm2 = function() {
+        var isRemoved = false;
+        var name = $("#prodName2").val();
+        if ($("#game2").is(":checked")){
+            var jogos = JSON.parse(localStorage.getItem("jogos"));
+
+            for (let i=0; i<jogos.length; i++){
+                var jogo = jogos[i];
+                if (name == jogo.nome){
+                    const index = jogos.indexOf(jogo);
+                    if (index > -1){
+                        jogos.splice(index, 1);
+                        alert("Jogo Removido!");
+                        var nJogo = parseInt(localStorage.getItem("numJogos"));
+                        if (isNaN(nJogo)){
+                            break;
+                        }
+                        isRemoved = true;
+                        nJogo--;
+                        localStorage.setItem("numJogos", JSON.stringify(nJogo));
+                        $("#nJog").text(nJogo);
+                        localStorage.setItem("jogos", JSON.stringify(jogos)); // Atualizar após remover
+
+                    }
+                }
+            }
+            if (!isRemoved){
+                alert("Jogo não existente!");
+            }
+        }
+        if ($("#merch2").is(":checked")){
+            var produtos = JSON.parse(localStorage.getItem("produtos"));
+
+            for (let i=0; i<produtos.length; i++){
+                var produto = produtos[i];
+                if (name == produto.nome){
+                    const index = produtos.indexOf(produto);
+                    if (index > -1){
+                        produtos.splice(index, 1);
+
+                        alert("Merchandising Removido!");
+                        var nProd = parseInt(localStorage.getItem("numProdutos"));
+                        if (isNaN(nProd)){
+                            break;
+                        }
+                        isRemoved = true;
+                        nProd--;
+                        localStorage.setItem("numProdutos", JSON.stringify(nProd));
+                        $("#nProd").text(nProd);
+                        localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualizar após remover
+
+                    }
+                }
+            }
+            if (!isRemoved){
+                alert("Produto não existente!");
+            }
+        }
+     
+
+        console.log(JSON.parse(localStorage.getItem("jogos")));
+        console.log(JSON.parse(localStorage.getItem("produtos")));
+        
+    }
+
+    
 
 
 
