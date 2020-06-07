@@ -216,11 +216,11 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 
 <!-- WITH KNOCKOUTJS -->
 					
-				</td>				<td data-bind="with: jogo" class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
 					
 						
 
-<div class="paragraph"><font data-bind="text: nome" size="7"></font><br /><br /><font size="5">Compra: </font><span style="color:rgb(77, 81, 86)"><font size="5">
+<div data-bind="with: jogo" class="paragraph"><font data-bind="text: nome" size="7"></font><br /><br /><font size="5">Compra: </font><span style="color:rgb(77, 81, 86)"><font size="5">
 	<a data-bind="text: preco"></a>&euro;<br />
 	Aluguer:<a data-bind="text: preco/4"></a>&euro;/semana<br />
 	Avalia&ccedil;&otilde;es: 3.7/5.0<br />
@@ -237,7 +237,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 					
 
 
-<div style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
+<div data-bind="if: cliente" style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
 <a class="wsite-button wsite-button-large wsite-button-normal" href="aluguer.html" >
 <span class="wsite-button-inner">Alugar</span>
 </a>
@@ -249,7 +249,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 					
 						
 					
-<div style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
+<div data-bind="if: cliente" style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
 <a class="wsite-button wsite-button-large wsite-button-highlight" href="compra.html" >
 <span class="wsite-button-inner">Comprar</span>
 </a>
