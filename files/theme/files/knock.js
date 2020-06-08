@@ -11,6 +11,7 @@ function vm() {
     this.jogos = ko.observableArray(JSON.parse(localStorage.getItem("jogos")));
     this.numJogos = ko.observable(JSON.parse(localStorage.getItem("numJogos")));
     this.produtos = ko.observableArray(JSON.parse(localStorage.getItem("produtos")));
+    this.produtosSearch = ko.observableArray(JSON.parse(localStorage.getItem("produtos")));
     this.numProdutos = ko.observable(JSON.parse(localStorage.getItem("numProdutos")));
 
     this.produto = ko.observable(JSON.parse(localStorage.getItem("produto")));
@@ -105,8 +106,6 @@ function vm() {
     }
 
    submitForm = function() { 
-
-
         var name = $("#prodName").val();
         var price = $("#prodPrice").val();
         var desc = $("#prodDesc").val();
@@ -132,8 +131,6 @@ function vm() {
         }
 
         if ($("#merch").is(":checked")){
-
-
             var height = $("#mHeight").val();
             var width = $("#mWidth").val();
             var leng = $("#mLength").val();
@@ -247,7 +244,7 @@ function vm() {
         merchs.push(merch); // merch adc para o arr
         localStorage.setItem("clienteMerchs", JSON.stringify(merchs));
         console.log(JSON.parse(localStorage.getItem("clienteMerchs")));
-        document.location.href = "compra.html";
+        document.location.href = "compra-produto.html";
     }
 
     this.buyGame = function() {
@@ -274,6 +271,18 @@ function vm() {
         document.location.href = "aluguer.html";
     }
 
+    // Pesquisar 
+
+    this.searchProd = function() {
+        var value = $("#pesq").val();
+        console.log(value);
+        console.log(self.produtos);
+
+        for (var i; i<this.produtos; i++){
+            console.log(this.produtos[i]);
+        }
+
+    }
 
 
 
