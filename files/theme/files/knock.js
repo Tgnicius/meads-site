@@ -8,13 +8,17 @@ function vm() {
     }
     this.cliente = ko.observable(JSON.parse(localStorage.getItem("cliente")));
 
-    this.jogos = ko.observable(JSON.parse(localStorage.getItem("jogos")));
+    this.jogos = ko.observableArray(JSON.parse(localStorage.getItem("jogos")));
     this.numJogos = ko.observable(JSON.parse(localStorage.getItem("numJogos")));
-    this.produtos = ko.observable(JSON.parse(localStorage.getItem("produtos")));
+    this.produtos = ko.observableArray(JSON.parse(localStorage.getItem("produtos")));
     this.numProdutos = ko.observable(JSON.parse(localStorage.getItem("numProdutos")));
 
     this.produto = ko.observable(JSON.parse(localStorage.getItem("produto")));
     this.jogo = ko.observable(JSON.parse(localStorage.getItem("jogo")));
+
+    this.jogosComprados = ko.observableArray(JSON.parse(localStorage.getItem("clienteComprados")));
+    this.jogosAlugados = ko.observableArray(JSON.parse(localStorage.getItem("clienteAlugados")));
+    this.merchComprados = ko.observableArray(JSON.parse(localStorage.getItem("clienteMerchs")));
 
     this.img = ko.observable();
 
@@ -100,7 +104,7 @@ function vm() {
         this.verForm2(isValid);
     }
 
-    submitForm = function() {
+   submitForm = function() { 
 
 
         var name = $("#prodName").val();
@@ -220,10 +224,6 @@ function vm() {
         
     }
 
-    
-
-
-
     // Produtos e Jogos página de compras -------------------------
 
     this.produtosPage = function(produto) {
@@ -235,6 +235,46 @@ function vm() {
         localStorage.setItem("jogo", JSON.stringify(jogo));
         document.location.href = "jogo-aleatorio.html";
     }
+
+    // Adicionar merchandising e jogos
+
+    this.addMerch = function() {
+        var merchs = JSON.parse(localStorage.getItem("clienteMerchs"));
+        if (merchs == null){ // Não houver jogos a princípio
+            merchs = [] // array vazio
+        }
+        var merch = JSON.parse(localStorage.getItem("produto"));
+        merchs.push(merch); // merch adc para o arr
+        localStorage.setItem("clienteMerchs", JSON.stringify(merchs));
+        console.log(JSON.parse(localStorage.getItem("clienteMerchs")));
+        document.location.href = "compra.html";
+    }
+
+    this.buyGame = function() {
+        var games = JSON.parse(localStorage.getItem("clienteComprados"));
+        if (games == null){ // Não houver jogos a princípio
+            games = [] // array vazio
+        }
+        var game = JSON.parse(localStorage.getItem("jogo"));
+        games.push(game); // merch adc para o arr
+        localStorage.setItem("clienteComprados", JSON.stringify(games));
+        console.log(JSON.parse(localStorage.getItem("clienteComprados")));
+        document.location.href = "compra.html";
+    }
+
+    this.rentGame = function() {
+        var games = JSON.parse(localStorage.getItem("clienteAlugados"));
+        if (games == null){ // Não houver jogos a princípio
+            games = [] // array vazio
+        }
+        var game = JSON.parse(localStorage.getItem("jogo"));
+        games.push(game); // merch adc para o arr
+        localStorage.setItem("clienteAlugados", JSON.stringify(games));
+        console.log(JSON.parse(localStorage.getItem("clienteAlugados")));
+        document.location.href = "aluguer.html";
+    }
+
+
 
 
 

@@ -129,11 +129,9 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
       <div class="nav-wrap">
         <div id="logo"><span class="wsite-logo">
 
-	<a href="">
 	
-	<span id="wsite-title">GAME CENTER</span>
+	<span id="wsite-title" style="align-items: center;">GAME CENTER</span>
 	
-	</a>
 
 </span></div>
         <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
@@ -238,8 +236,8 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 
 
 <div data-bind="if: cliente" style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="aluguer.html" >
-<span class="wsite-button-inner">Alugar</span>
+<a class="wsite-button wsite-button-large wsite-button-normal">
+<span data-bind="click: rentGame" class="wsite-button-inner">Alugar</span>
 </a>
 <div style="height: 10px; overflow: hidden;"></div></div>
 
@@ -250,8 +248,8 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 						
 					
 <div data-bind="if: cliente" style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
-<a class="wsite-button wsite-button-large wsite-button-highlight" href="compra.html" >
-<span class="wsite-button-inner">Comprar</span>
+<a class="wsite-button wsite-button-large wsite-button-highlight" >
+<span data-bind="click: buyGame" class="wsite-button-inner">Comprar</span>
 </a>
 <div style="height: 10px; overflow: hidden;"></div></div>
 

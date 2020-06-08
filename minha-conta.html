@@ -231,15 +231,26 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 					
 				</td>				<td class="wsite-multicol-col" style="width:50.30303030303%; padding:0 15px;">
 					
-						
+<!-- Cliente ------------------>						
 
-<div data-bind="if: cliente" class="paragraph" style="text-align:left;"><font size="5">Usu&aacute;rio: NoobMaster69<br />Jogos comprados: 4<br />Jogos alugados: 13<br />N&uacute;mero de amigos: 95<br />Avalia&ccedil;&otilde;es feitas: 2<br />&#8203;Pontos de avalia&ccedil;&atilde;o: 130</font>
+<div data-bind="if: cliente" class="paragraph" style="text-align:left;">
+  <font size="5">Usu&aacute;rio: NoobMaster69<br />
+    Jogos comprados: <a data-bind="text: jogosComprados().length"></a><br />
+    Jogos alugados: <a data-bind="text: jogosAlugados().length"></a><br />
+    N&uacute;mero de amigos: 95<br />
+    Avalia&ccedil;&otilde;es feitas: 2<br />
+    &#8203;Pontos de avalia&ccedil;&atilde;o: 130</font>
 </div>
+
+<!-- Empresa   -->
+
 <div data-bind="ifnot: cliente" class="paragraph" style="text-align:left;"><font size="5">Nome: My Company<br />
-  Número de merchandising: <a id="nProd" data-bind="text: numProdutos"></a><br />
-  Número de jogos: <a id="nJog" data-bind="text: numJogos"></a>
+  Número de merchandising: <a id="nProd" data-bind="text: produtos().length"></a><br />
+  Número de jogos: <a id="nJog" data-bind="text: jogos().length"></a>
   <br />Avaliação média: 3.7</font>
 </div>
+
+<!-- Cliente    -->
 
 <div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
 <hr class="styled-hr" style="width:100%;"></hr>
@@ -250,6 +261,8 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 <span id="botao" class="wsite-button-inner">Mudar dados da conta</span>
 </a>
 <div style="height: 10px; overflow: hidden;"></div></div>
+
+<!-- Empresa --------->
 
 <div data-bind="ifnot: cliente" style="text-align:left;"><div style="height: 10px; overflow: hidden;"></div>
 <a class="wsite-button wsite-button-large wsite-button-normal" href="javascript:;" >
