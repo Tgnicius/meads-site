@@ -250,7 +250,7 @@ function vm() {
     this.buyGame = function() {
         var games = JSON.parse(localStorage.getItem("clienteComprados"));
         if (games == null){ // Não houver jogos a princípio
-            games = [] // array vazio
+            games = []// array vazio
         }
         var game = JSON.parse(localStorage.getItem("jogo"));
         games.push(game); // merch adc para o arr
