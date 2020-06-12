@@ -383,58 +383,6 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 		<div class="wsite-section-content">
 				<div class="container">
 			<div class="wsite-section-elements">
-        <h2 class="wsite-content-title" style="text-align:center;">Jogos</h2>
-        <h5 class="wsite-content-title" >Comprados:</h5>
-        <div>
-          <div data-bind="foreach: jogosComprados"  style="width: 100%; padding-bottom: 50px; text-align: center;" id="element-71b90f39-8d37-4571-8faf-32bdf525cd0a" data-platform-element-id="580202859168721269-1.3.6" class="platform-element-contents">
-            <div class="team-card--small" style="width: 21.5%; display: inline-block; justify-items: center; margin: 15px;">
-              <div class="team-card__image--filled">
-                  <div>
-                    <div class="wsite-image wsite-image-border-none " >
-                      <a>
-                      <img src="uploads/1/3/2/2/132271351/149572252_orig.jpg" alt="Picture" style="width:auto;max-width:100%" />
-                      </a>
-                      <div style="display:block;font-size:90%"></div>
-                    </div>
-                  </div>
-              </div>
-              <div class="team-card__extras">
-                <div style="text-align:center;">
-                  <div style="height: 10px; overflow: hidden;"></div>
-                  <a class="wsite-button wsite-button-large wsite-button-highlight">
-                    <span class="wsite-button-inner"><div data-bind="text: nome" class="paragraph"></div></span>
-                  </a>
-                  <div style="height: 10px; overflow: hidden;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h5 class="wsite-content-title" >Alugados:</h5>
-        <div data-bind="foreach: jogosAlugados"  style="width: 100%; padding-bottom: 50px; text-align: center;" id="element-71b90f39-8d37-4571-8faf-32bdf525cd0a" data-platform-element-id="580202859168721269-1.3.6" class="platform-element-contents">
-          <div class="team-card--small" style="width: 21.5%; display: inline-block; justify-items: center; margin: 15px;">
-            <div class="team-card__image--filled">
-                <div>
-                  <div class="wsite-image wsite-image-border-none " >
-                    <a>
-                    <img src="uploads/1/3/2/2/132271351/aluguel.jpg" alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <div style="display:block;font-size:90%"></div>
-                  </div>
-                </div>
-            </div>
-            <div class="team-card__extras">
-              <div style="text-align:center;">
-                <div style="height: 10px; overflow: hidden;"></div>
-                <a class="wsite-button wsite-button-large wsite-button-highlight" >
-                  <span class="wsite-button-inner" ><div data-bind="text: nome" class="paragraph"></div><div id="demo"></div></span>
-                </a>
-                <div style="height: 10px; overflow: hidden;"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
         <h2 class="wsite-content-title" style="text-align:center;">Amigos</h2>
         
 
@@ -1925,37 +1873,7 @@ if (document.documentElement.appReady || (window.inEditor && window.inEditor()))
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script>
-  // Set the date we're counting down to
-  var countDownDate = new Date();
-  countDownDate.setDate(countDownDate.getDate() + 7);
 
-  // Update the count down every 1 second
-  var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-  }, 1000);
-  </script>
     <div id="customer-accounts-app"></div>
     <script src="http://cdn2.editmysite.com/js/site/main-customer-accounts-site.js?buildTime=1234"></script>
     <script>
